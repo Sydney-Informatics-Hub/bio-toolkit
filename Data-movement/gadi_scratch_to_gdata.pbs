@@ -1,0 +1,68 @@
+#!/bin/bash
+
+##########################################################################
+#
+# Platform: NCI Gadi HPC
+# Usage: qsub gadi_scratch_2_gdata.pbs
+# Version: 1.0.0
+#
+# For more details see: https://github.com/Sydney-Informatics-Hub/Bio-toolkit
+#
+# If you use this script towards a publication, please acknowledge the
+# Sydney Informatics Hub.
+#
+# Suggested acknowledgement:
+# The authors acknowledge the support provided by the Sydney Informatics Hub,
+# a Core Research Facility of the University of Sydney. This research
+# was undertaken with the assistance of resources and services from the National
+# Computational Infrastructure (NCI), which is supported by the Australian
+# Government, and the Australian BioCommons which is enabled by NCRIS via
+# Bioplatforms Australia funding.
+#
+##########################################################################
+
+# BEFORE RUNNING 
+## Replace <PROJECT> with your NCI project code 
+## Fill in source_path and destination_path variables 
+
+#PBS -P <PROJECT>
+#PBS -N transfer
+#PBS -l walltime=10:00:00
+#PBS -l ncpus=1
+#PBS -l mem=8GB
+#PBS -W umask=022
+#PBS -q copyq
+#PBS -l wd
+#PBS -lstorage=scratch/<PROJECT>+gdata/<PROJECT>
+#PBS -o ./Logs/transfer2gdata.o
+#PBS -e ./Logs/transfer2gdata.e
+
+source_path=/scratch
+destination_path=/g/data/
+
+mkdir -p ${destination_path}
+
+# Create md5sum
+md5sum ${source_path}/* > ${destination_path}/md5sums.txt
+
+while [ 1 ]
+do
+        echo Transferring ${source_path} to ${destination_path}
+
+        # This is really slow... ~832 GB transferred in 10 hours
+        #rsync -rtlPvz --append-verify ${source_path} ${destination_path}
+
+        # NCI recommended command, ~4.1 TB transferred in 20 hours
+        rsync -aru --partial -e "ssh -T -c arcfour" ${source_path} ${destination_path}
+
+        if [ "$?" = "0" ]
+        then
+                echo "Rsync completed normally"
+                dt=$(date)
+                echo Finished transferring at $dt
+        exit
+        else
+                echo "Rsync failure. Backing off and retrying in 3 minutes"
+                sleep 180
+        fi
+done

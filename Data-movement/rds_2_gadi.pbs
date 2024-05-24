@@ -1,0 +1,63 @@
+#!/bin/bash
+
+##########################################################################
+#
+# Platform: USyd Artemis HPC and NCI Gadi HPC
+# Usage: qsub rds_2_gadi.pbs (from Gadi)
+# Version: 1.0.0
+#
+# For more details see: https://github.com/Sydney-Informatics-Hub/Bio-toolkit
+#
+# If you use this script towards a publication, please acknowledge the
+# Sydney Informatics Hub.
+#
+# Suggested acknowledgement:
+# The authors acknowledge the support provided by the Sydney Informatics Hub,
+# a Core Research Facility of the University of Sydney. This research
+# was undertaken with the assistance of resources and services from the National
+# Computational Infrastructure (NCI), which is supported by the Australian
+# Government, and the Australian BioCommons which is enabled by NCRIS via
+# Bioplatforms Australia funding.
+#
+##########################################################################
+
+# BEFORE RUNNING 
+## Replace <PROJECT> with your NCI project code 
+## Ensure ssh keys are stored both at gadi and artemis $home directories for passwordless transfer
+## Fill in rds_path, rds_path, and gadi_path variables 
+## Unhash the transfer command you want to use, depending on the direction of data movement
+
+#PBS -P <PROJECT>
+#PBS -N transfer
+#PBS -l walltime=10:00:00
+#PBS -l ncpus=1
+#PBS -l mem=8GB
+#PBS -W umask=022
+#PBS -q copyq
+#PBS -l wd
+#PBS -lstorage=scratch/<PROJECT>+gdata/<PROJECT>
+
+# RDS and Gadi workspace details:
+rds_user= # your unikey
+rds_host=research-data-ext.sydney.edu.au # don't change this
+rds_path= # path to directory or file on rds
+gadi_path= # path to directory or file on gadi
+
+# Download a file from RDS to Gadi
+#rds_file=<filename>
+#mkdir -p $gadi_path 
+#sftp ${remote_user}@${rds_host}:${rds_path}/${rds_file} ${gadi_path} 
+
+# Download a directory from RDS to Gadi
+#rds_dir=<dirname>
+#mkdir -p $gadi_path
+#sftp -r ${remote_user}@${rds_host}:${rds_path}/${rds_dir} ${gadi_path} 
+
+# Upload a file from Gadi to RDS
+#gadi_file=<filename>
+#sftp ${remote_user}@${rds_host}:${rds_path} <<< $"put ${gadi_file}" 
+
+# Upload a directory from Gadi to RDS
+# CAVEAT: this method will only work if a directory of the same name exists at destination!
+#gadi_dir=<dirname>
+#sftp ${remote_user}@${rds_host}:${rds_path} <<< $"put -r ${gadi_dir}" 
