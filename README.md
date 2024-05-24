@@ -1,9 +1,9 @@
 # Bio-toolkit
 Utility scripts and templates for public bioinformatics work. 
 
-* [Data transfer]()
-* [Tools and software]()
-* [Training resources]()
+* [Data transfer](Data-movement)
+* [Tools and software](Tools)
+* [Training resources](Training)
 
 
 ### Attention SIH staff 
