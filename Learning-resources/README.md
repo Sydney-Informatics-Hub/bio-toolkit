@@ -92,12 +92,4 @@ Bioinformatics software typically have a lot of dependencies. Managing software 
 
 ## Various 'omics techniques
 
-### Genomics 
-
-* https://genomics.sschmeier.com/index.html 
-* 
-
-### Transcriptomics 
-
-### Proteomics 
 
