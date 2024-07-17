@@ -30,6 +30,7 @@ The Linux shell is a powerful interface for interacting with your computer's ope
 * https://sandbox.bio/
 * https://github.com/hbctraining/Intro-to-shell-flipped
 * https://swcarpentry.github.io/shell-novice/
+* https://github.com/evanpeikon/bash_fundamentals/tree/main
 * http://andrewjrobinson.github.io/training_docs/tutorials/unix/
 * https://www.edx.org/learn/linux/the-linux-foundation-introduction-to-linux 
 
