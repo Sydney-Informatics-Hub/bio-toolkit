@@ -4,11 +4,12 @@ Bioinformatics is an interdisciplinary field that leverages computational tools 
 
 * [What is bioinformatics?](#what-is-bioinformatics)
 * [The linux shell](#the-linux-shell)
+* [Common file formats](./File_formats.md)
 * [Intro to HPC](#into-to-hpc)
 * [Code management](#code-management)
 * [Software management](#software-management)
 * [R and Python](#r-and-python)
-* [Varios 'omics techniques](#various-omics-techniques)
+* [Various 'omics techniques](#various-omics-techniques)
 
 ## What is bioinformatics?
 
