@@ -10,6 +10,7 @@
 | HBC | [Short course modules library](https://hbctraining.github.io/Training-modules/) |
 | Software carpentries                | [Core lessons](https://software-carpentry.org/lessons/) |
 | EMBL-EBI                | [Webinar recordings](https://www.youtube.com/channel/UC5WlFNBSfmt3e8Js8o2fFqQ/videos) |
+| Galaxy Training Network   | [Self-directed tutorials](https://training.galaxyproject.org/training-material/) |
 
 ## Our training materials 
 
@@ -36,3 +37,6 @@ The training listed below were developed by Sydney Informatics Hub staff:
 - [Introduction to RNA sequence analysis on Galaxy](https://www.dropbox.com/home/SIH/SIH%20Training/Bioinformatics/Introduction%20to%20DNA%20sequence%20analysis%20on%20Galaxy?preview=RNASeqGalaxy_Westmead_November2018.pdf)
 - ["Intermediate" RNA-seq on Artemis](https://sydney-informatics-hub.github.io/training-RNAseq/) and [slides](https://github.com/Sydney-Informatics-Hub/training-RNAseq-slides)
 
+## Training delivery 
+
+- [Hybrid method for reaching dispersed and distant trainees](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008715)
