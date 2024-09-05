@@ -2,6 +2,8 @@
 
 Public datasets are a valuable resource for bioinformatics projects. They can be used to test new algorithms, develop new tools, and validate your results. Here are some public data resources that you may find useful.
 
+The [Australian BioCommons Data Management Collection](https://australianbiocommons.github.io/Learning-Library/data_management) is designed to support life sciences researchers understand the best practices and procedures involved in the stages of the data lifecycle. The collection consists of training materials and documentation from reputable sources such as EMBL-EBI Training and NCBI Training, and covers topics like data sharing and data reuse.
+
 ## General next generation sequencing 
 
 * Sequence Read Archive: https://trace.ncbi.nlm.nih.gov/Traces/index.html  
